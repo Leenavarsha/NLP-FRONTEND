@@ -1,7 +1,8 @@
+import os
 import gradio as gr
 import requests
 
-backend_url = "https://nlp-backend-1-vuvd.onrender.com"
+backend_url = "https://nlp-backend-1-vuvd.onrender.com/resume"
 
 def resumerequest(skills):
     response = requests.post(
@@ -21,4 +22,7 @@ demo = gr.Interface(
     title="AI Resume Generator"
 )
 
-demo.launch()
+demo.launch(
+    server_name="0.0.0.0",
+    server_port=int(os.environ.get("PORT", 7860))
+)
