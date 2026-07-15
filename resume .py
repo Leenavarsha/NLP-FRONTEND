@@ -1,7 +1,7 @@
 import gradio as gr
 import requests
 
-backend_url = "https://resume-2-yn01.onrender.com/resume"
+backend_url = "https://nlp-backend-1-vuvd.onrender.com"
 
 def resumerequest(skills):
     response = requests.post(
